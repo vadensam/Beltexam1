@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+                *{
+                box-sizing: border-box;
+            }
+            #container{
+                width: 95%;
+                padding: 5px;
+                margin: 0 auto;
+            }
+            header{
+                width: 100%;
+                padding: 5px;
+            }
+            header h2, a{
+                width: fit-content;
+                display: inline-block;
+            }
+            header h2{
+                margin-right: 40%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <header>
+                <h2>Hello {{user.fname}}. These are your Stats</h2>
+                <a href="{% url 'home'%}">Dashboard</a> |
+                <a href="{% url 'logout' %}">Log out</a> 
+            </header>
+            <h4>Total wishes granted so far by all users: {{granted}}</h4>
+            <p>Your granted wishes: {{my_gran}}</p>
+            <p>Your ungranted wishes: {{ungranted}}</p>
+        </div>
+    </body>
+</html>
